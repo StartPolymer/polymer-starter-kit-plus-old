@@ -10,7 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 /** @define Navigation */
 
 .Navigation {
-  padding: 0 24px;
+  padding-bottom: 0;
+  padding-top: 0;
 
   @nest &-icon {
     margin-right: 24px;
@@ -23,6 +24,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     color: currentColor;
     min-height: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
     text-decoration: none;
   }
 
@@ -33,7 +36,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 /* https://github.com/jonathantneal/postcss-nesting/issues/16 */
 .Navigation--menu {
-  --paper-menu-background-color: var(--secondary-background-color);
   --paper-menu-color: currentColor;
 
   /* stylelint-disable indentation */
@@ -48,4 +50,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background-color: var(--disabled-text-color);
   };
   /* stylelint-enable */
+
+  @media (--md-viewport) {
+    background-color: var(--secondary-background-color);
+  }
 }

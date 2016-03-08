@@ -14,19 +14,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     @apply(--layout-vertical);
     @apply(--paper-font-body2);
 
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color);
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
     height: 100%;
 
     @media (--md-viewport) {
+      background-color: var(--secondary-background-color);
       border-right: 1px solid var(--divider-color);
+      color: var(--secondary-text-color);
     }
   }
 
   @nest &-header {
     background-color: var(--primary-background-color);
     border-bottom: 1px solid var(--divider-color);
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
 
     @media (--md-viewport) {
       background-color: var(--dark-primary-color);
@@ -46,7 +48,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   @nest &-widget {
-    padding: 16px 0;
+    padding: 8px 0;
 
     @nest &--bottom {
       border-top: 1px solid var(--divider-color);

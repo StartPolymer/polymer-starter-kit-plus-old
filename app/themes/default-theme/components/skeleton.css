@@ -15,7 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   @nest &-drawer {
-    background-color: var(--primary-background-color);
+    background-color: var(--secondary-background-color);
     bottom: 0;
     display: none;
     left: 0;
