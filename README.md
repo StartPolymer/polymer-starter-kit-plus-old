@@ -16,11 +16,17 @@
 [Polymer Starter Kit](https://github.com/PolymerElements/polymer-starter-kit) and following  
 [The 10 Commandments of Modern Web Application](https://gist.github.com/JosefJezek/8020bd8f02c4992e7d7d)
 
+> Do you like it? Please, :star: **star the project** :star:
+
 ## Demo
 
 See latest Polymer Starter Kit Plus Demo (from master) at https://polymer-starter-kit-plus.appspot.com
 
 The demo is running on Google App Engine with [HTTP 2.0 Push](https://github.com/GoogleChrome/http2push-gae)
+
+## Projects based on PSK+
+
+- [Hoverboard](https://github.com/gdg-x/hoverboard)
 
 ## :sparkles: Features :sparkles:
 
