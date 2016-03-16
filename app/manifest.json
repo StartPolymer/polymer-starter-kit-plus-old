@@ -1,6 +1,6 @@
 {
-  "name": "Polymer Starter Kit Plus",
-  "short_name": "PSK+",
+  "name": "{$ appName $}",
+  "short_name": "{$ appShortName $}",
   "icons": [{
         "src": "images/touch/icon-72x72.png",
         "sizes": "72x72",
@@ -35,5 +35,7 @@
         "type": "image/png"
       }],
   "start_url": "./?utm_source=web_app_manifest",
-  "display": "standalone"
+  "display": "standalone",
+  "theme_color": "{$ theme.manifest.themeColor $}",
+  "background_color": "{$ theme.manifest.backgroundColor $}"
 }

@@ -2,8 +2,11 @@
 
 // Compile HTML files with Nunjucks templating engine
 module.exports = function ($, config, gulp) { return function () {
-  var variables = require('../app/themes/' + config.appTheme + '/variables');
-  var metadata = require('../app/metadata');
+  var merge = require('merge');
+  var metadata = {
+    config: merge(require('../app/metadata/config'), config),
+    theme: require('../app/themes/' + config.appTheme + '/variables')
+  }
 
   function markdownRender(markdown) {
     var cm = require('commonmark');
@@ -29,7 +32,7 @@ module.exports = function ($, config, gulp) { return function () {
       }
     }))
     .pipe($.nunjucksHtml({
-      locals: require('merge')(variables.metadata, metadata, {config: config}),
+      locals: merge(metadata, require('../app/metadata/general')),
       searchPaths: ['app/content', 'app/elements', 'app/views'],
       tags: {
         variableStart: '{$',

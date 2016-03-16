@@ -9,7 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <head>
-  <base href="/">
+  <base href="{$ baseUrl $}">
   <meta charset="{$ charset $}">
   <meta name="description" content="{$ description $}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,17 +19,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="shortcut icon" href="favicon.ico">
 
   <!-- Canonical link for single page site with more links to same content -->
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="{$ baseCanonicalUrl $}">
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="{$ chromeThemeColor $}">
+  <meta name="theme-color" content="{$ theme.metadata.chromeThemeColor $}">
 
   <!-- Web Application Manifest for Chrome M39
        https://developer.chrome.com/multidevice/android/installtohomescreen -->
   <link rel="manifest" href="manifest.json">
 
   <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="{$ msapplicationTileColor $}">
+  <meta name="msapplication-TileColor" content="{$ theme.metadata.msapplicationTileColor $}">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">

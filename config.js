@@ -8,8 +8,8 @@ try {
 }
 
 module.exports = {
-  // App name is used for iron-localstorage element and Service Worker cache ID
-  appName: 'polymer-starter-kit-plus',
+  // App name ID is used for iron-localstorage element and Service Worker cache ID
+  appNameId: 'polymer-starter-kit-plus',
   // App theme is directory name in app/themes
   appTheme: 'default-theme',
   // App version from git is used for deploy task and frontend
