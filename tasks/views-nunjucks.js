@@ -1,12 +1,12 @@
 'use strict';
 
 // Compile HTML files with Nunjucks templating engine
-module.exports = function ($, config, gulp) { return function () {
+module.exports = function ($, config, gulp, requireUncached) { return function () {
   var merge = require('merge');
   var metadata = {
-    config: merge(require('../app/metadata/config'), config),
-    theme: require('../app/themes/' + config.appTheme + '/variables')
-  }
+    config: merge(requireUncached('../app/metadata/config'), config),
+    theme: requireUncached('../app/themes/' + config.appTheme + '/variables')
+  };
 
   function markdownRender(markdown) {
     var cm = require('commonmark');
@@ -32,7 +32,7 @@ module.exports = function ($, config, gulp) { return function () {
       }
     }))
     .pipe($.nunjucksHtml({
-      locals: merge(metadata, require('../app/metadata/general')),
+      locals: merge(metadata, requireUncached('../app/metadata/general')),
       searchPaths: ['app/content', 'app/elements', 'app/views'],
       tags: {
         variableStart: '{$',
