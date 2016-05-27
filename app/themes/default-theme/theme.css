@@ -20,4 +20,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 @import 'components/toggle';
 
 /* Utilities */
+@import 'utilities/display';
 @import 'utilities/layout';
