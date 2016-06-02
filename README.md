@@ -2,6 +2,8 @@
 
 # Polymer Starter Kit Plus
 
+[![Join the chat at https://gitter.im/StartPolymer/polymer-starter-kit-plus](https://badges.gitter.im/StartPolymer/polymer-starter-kit-plus.svg)](https://gitter.im/StartPolymer/polymer-starter-kit-plus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![sitespeed.io 99%](https://img.shields.io/badge/sitespeed.io-99%-brightgreen.svg)](https://results.sitespeed.io/6ba4-2016/1/21/96a731d4-45fe-4230-958f-255011dd14a3/index2.html)
 [![PageSpeed 97%](https://img.shields.io/badge/PageSpeed-97%-brightgreen.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fpolymer-starter-kit-plus.appspot.com&tab=desktop)
 [![Resizer Responsive UI](https://img.shields.io/badge/Resizer-Responsive%20UI-brightgreen.svg)](http://design.google.com/resizer/#url=https%3A%2F%2Fpolymer-starter-kit-plus.appspot.com)
