@@ -15,6 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!-- Don't use <body unresolved>. It's a simple FOUC solution, but hides
      the page until imports and Polymer are loaded. Intead, control FOUC manually with
      a skeleton. -->
+
 <body>
   <span id="browser-sync-binding"></span>
 
@@ -28,18 +29,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <my-app id="app"></my-app>
 
   <!-- Service Worker support -->
-  <platinum-sw-register auto-register
-                        clients-claim
-                        skip-waiting
-                        base-uri="bower_components/platinum-sw/bootstrap">
-    <!-- Google Analytics offline support
+  <!-- <platinum-sw-register
+    auto-register
+    skip-waiting
+    clients-claim
+    reload-on-install
+    href="sw-import.js">
+  <platinum-sw-cache
+      default-cache-strategy="networkFirst">
+  </platinum-sw-cache>
+</platinum-sw-register> -->
+  <platinum-sw-register auto-register clients-claim skip-waiting base-uri="bower_components/platinum-sw/bootstrap">
+    <!-- Google Analytics offline support -->
     <platinum-sw-offline-analytics></platinum-sw-offline-analytics>
-    -->
-    <platinum-sw-cache default-cache-strategy="fastest"
-                       cache-config-file="cache-config.json">
+
+    <platinum-sw-cache default-cache-strategy="fastest" cache-config-file="cache-config.json">
     </platinum-sw-cache>
+
   </platinum-sw-register>
 
+  <!-- <firebase-app name="firebase" api-key="AIzaSyAXZfyx1shQBDZ3THbqdQnEaHUqFaPGX8g"
+    auth-domain="project-7228392500579219360.firebaseapp.com"
+    database-url="https://project-7228392500579219360.firebaseio.com"
+    storageBucket="project-7228392500579219360.appspot.com">
+  </firebase-app> -->
   <!-- build:js scripts/app.min.js async -->
   <script src="bower_components/page/page.js"></script>
   <script src="scripts/app.js"></script>

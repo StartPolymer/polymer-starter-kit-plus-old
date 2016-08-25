@@ -13,5 +13,6 @@ module.exports = function ($, config, gulp, environment) {
     subdomain = config.deploy.firebase.env[environment];
   }
 
-  return gulp.src('').pipe($.shell('firebase deploy -f ' + subdomain));
+  return gulp.src('').pipe($.shell('firebase deploy '));
+  //return gulp.src('').pipe($.shell('firebase deploy ' + subdomain));
 };

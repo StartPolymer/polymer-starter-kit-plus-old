@@ -45,7 +45,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // When base-bundle.html with elements is loaded
     var onImportLoaded = function() {
       logger('Imports are loaded and elements have been registered!');
-      
+
       // Remove skeleton
       var skeleton = document.getElementById('skeleton');
       skeleton.remove();
