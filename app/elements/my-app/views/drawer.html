@@ -12,7 +12,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <paper-scroll-header-panel class="Drawer" drawer fixed>
   <!-- Drawer Toolbar -->
   <paper-toolbar class="Drawer-header">
-    <span class="Drawer-title">{$ appName $}</span>
+    <a class="Navigation-link" data-route="home" href$="{{baseUrl}}">
+      <iron-icon class="Navigation-icon" icon="home"></iron-icon>
+      <span class="Drawer-title">{$ appName $}</span>
+    </a>
   </paper-toolbar>
 
   <!-- Drawer Content -->
@@ -24,12 +27,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-icon class="Navigation-icon" icon="home"></iron-icon>
           <span class="Navigation-text">Home</span>
         </a>
-  
+
         <a class="Navigation-link" data-route="users" href$="{{baseUrl}}users">
           <iron-icon class="Navigation-icon" icon="supervisor-account"></iron-icon>
           <span class="Navigation-text">Users</span>
         </a>
-  
+
         <a class="Navigation-link" data-route="contact" href$="{{baseUrl}}contact">
           <iron-icon class="Navigation-icon" icon="mail"></iron-icon>
           <span class="Navigation-text">Contact</span>
@@ -52,7 +55,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-icon class="Navigation-icon" icon="announcement"></iron-icon>
           <span class="Navigation-text">Submit Feedback</span>
         </a>
-        
+
         <a class="Navigation-link" href="https://github.com/StartPolymer/polymer-starter-kit-plus/blob/master/README.md" target="_blank">
           <iron-icon class="Navigation-icon" icon="help"></iron-icon>
           <span class="Navigation-text">Help</span>
