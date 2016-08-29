@@ -51,6 +51,7 @@ gulp.task('lint-js', ['ensureFiles'], function() {
   return gulp.src([
       'app/scripts/**/*.js',
       '!app/scripts/analytics.js',
+      '!app/scripts/firebase-ui-auth.js',
       'app/elements/**/*.js',
       'gulpfile.js'
     ])
@@ -101,7 +102,7 @@ gulp.task('copy', function() {
   var icons = gulp.src(['app/themes/' + config.appTheme + '/icons.html'])
     .pipe(gulp.dest('dist/themes/' + config.appTheme));
 
-  var scripts = gulp.src(['app/scripts/analytics.js'])
+  var scripts = gulp.src(['app/scripts/analytics.js','app/scripts/firebase-ui-auth.js'])
     .pipe(gulp.dest('dist/scripts'));
 
   return merge(app, bower, elements, icons, scripts)
@@ -288,6 +289,10 @@ gulp.task('copy-hosting-config', require(task('copy-hosting-config'))($, config,
 // https://www.google-analytics.com/analytics.js has set only 2 hours cache
 gulp.task('download:analytics', require(task('download-analytics'))($, gulp));
 
+// Download newest script firebase-ui-auth.js from Google, because link
+// https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js has set only 2 hours cache
+gulp.task('download:firebase-ui', require(task('download-firebase-ui'))($, gulp));
+
 // Fix paths before revision task
 gulp.task('fix-paths-before-revision', require(task('fix-paths'))($, gulp, merge, 'before'));
 
@@ -329,7 +334,7 @@ gulp.task('default', ['clean'], function(cb) {
 // Initializing app
 gulp.task('init', function(cb) {
   runSequence(
-    ['download:analytics', 'download:fonts'],
+    ['download:analytics', 'download:fonts','download:firebase-ui'],
     cb);
 });
 
