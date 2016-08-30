@@ -41,7 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-app">
 
-  <template is="dom-if" if="{{online}}">
+  <template>
     <style include="shared-styles">
       @import "theme.css";
     </style>
@@ -62,7 +62,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-toast id="infoToast" class="Toast" duration="8000"></paper-toast>
   </template>
-
+  <script src="../../scripts/routing.js"></script>
   <script src="my-app.js"></script>
 
 </dom-module>

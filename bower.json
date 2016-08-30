@@ -25,7 +25,8 @@
     "start-google-analytics-tracker": "StartPolymer/start-google-analytics-tracker#1.1.0",
     "polymerfire": "^0.9.5",
     "firebase": "^3.3.0",
-    "SpinKit": "spinkit#^1.2.5"
+    "SpinKit": "spinkit#^1.2.5",
+    "firebase-element": "GoogleWebComponents/firebase-element#^1.0.15"
   },
   "devDependencies": {
     "web-component-tester": "4.2.0"
