@@ -26,7 +26,7 @@ if (window.location.port === '') {  // if production
   page.base(baseUrl.replace(/\/$/, ''));
 }
 
-let app = document.getElementById('my-app');
+let app = document.getElementById('app');
 
 window.addEventListener('upgraded', () => {
   app.baseUrl = baseUrl;
@@ -45,7 +45,7 @@ function once(node, event, fn, args) {
 // Middleware
 function scrollToTop(ctx, next) {
   function setData() {
-    document.getElementById('my-app').scrollPageToTop();
+    app.scrollPageToTop();
   }
 
   // Check if element prototype has not been upgraded yet
@@ -59,7 +59,7 @@ function scrollToTop(ctx, next) {
 
 function closeDrawer(ctx, next) {
   function setData() {
-    document.getElementById('my-app').closeDrawer();
+    app.closeDrawer();
   }
 
   // Check if element prototype has not been upgraded yet
@@ -102,6 +102,10 @@ page('/', () => {
 
 page(baseUrl, () => {
   setHomePage();
+});
+
+page('/login', () => {
+  // app.remove();
 });
 
 page('/users', () => {

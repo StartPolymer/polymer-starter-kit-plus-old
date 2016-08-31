@@ -33,6 +33,10 @@ class MyApp {
   ready() {
     // Let the world know we're ready to receive data
     // https://github.com/Polymer/polymer/issues/2653
+    if (app.debug) {
+      console.info('Aplicaçao inicializada!');
+    }
+
     this.fire('upgraded');
     this.upgraded = true;
   }

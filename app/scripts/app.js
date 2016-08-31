@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   let app = document.getElementById('app');
-  
+
   // Debug mode
   app.debug = true;
 
@@ -54,7 +54,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // Emulate WebComponentsReady event for browsers supporting Web Components natively
         // (Chrome, Opera, Vivaldi)
         document.dispatchEvent(
-          new CustomEvent('WebComponentsReady', {bubbles: true})
+          new CustomEvent('WebComponentsReady', {
+            bubbles: true
+          })
         );
       }
     };
@@ -149,6 +151,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer.Base.transform(`scale(${scaleMiddle}) translateZ(0)`, headerTitle);
     // Scale headerSubTitle
     Polymer.Base.transform(`scale(${scaleBottom}) translateZ(0)`, headerSubTitle);
+  });
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAXZfyx1shQBDZ3THbqdQnEaHUqFaPGX8g",
+    authDomain: "project-7228392500579219360.firebaseapp.com",
+    databaseURL: "https://project-7228392500579219360.firebaseio.com",
+    storageBucket: "project-7228392500579219360.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+  var initApp = function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log("ok");
+        // User is signed in.
+        // var displayName = user.displayName;
+        // var email = user.email;
+        // var emailVerified = user.emailVerified;
+        // var photoURL = user.photoURL;
+        // var uid = user.uid;
+        // var providerData = user.providerData;
+        // user.getToken().then(function(accessToken) {
+        //   document.getElementById('sign-in-status').textContent = 'Signed in';
+        //   document.getElementById('sign-in').textContent = 'Sign out';
+        //   document.getElementById('account-details').textContent = JSON.stringify({
+        //     displayName: displayName,
+        //     email: email,
+        //     emailVerified: emailVerified,
+        //     photoURL: photoURL,
+        //     uid: uid,
+        //     accessToken: accessToken,
+        //     providerData: providerData
+        //   }, null, '  ');
+        // });
+        page('/home');
+      } else {
+        // User is signed out.
+        // document.getElementById('sign-in-status').textContent = 'Signed out';
+        // document.getElementById('sign-in').textContent = 'Sign in';
+        // document.getElementById('account-details').textContent = 'null';
+          // page('/login');
+      }
+    }, function(error) {
+      console.log(error);
+    });
+  };
+
+  window.addEventListener('load', function() {
+    initApp()
   });
 
 })(document);

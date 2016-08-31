@@ -13,12 +13,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template>
 
-    <template is="dom-if" if="{{!signedIn}}">
-      <my-app id="my-app"></my-app>
+
+    <my-app id="my-app"></my-app>
+    <template is="dom-if" if="{{!firebase.auth().currentUser}}">
     </template>
 
     <template is="dom-if" if="{{signedIn}}">
-      <na-login id="my-app"></na-login>
     </template>
 
   </template>
