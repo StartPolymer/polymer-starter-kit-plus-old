@@ -1,11 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script> -->
+<script src="../../scripts/firebase-ui-auth.js"></script>
 <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
 <dom-module id="na-login">
   <template>
-    <style include="shared-styles">
-      @import "theme.css";
+    <style>
       :host {
         display: block;
         text-align: center;
@@ -21,6 +21,8 @@
       is: 'na-login',
       ready: function() {
         var uiConfig = {
+          'queryParameterForWidgetMode': 'mode',
+          'queryParameterForSignInSuccessUrl': 'signInSuccessUrl',
           'signInSuccessUrl': '/',
           'signInOptions': [
             // Leave the lines as is for the providers you want to offer your users.
@@ -29,22 +31,21 @@
           ],
           // Terms of service url.
           'tosUrl': '<your-tos-url>',
+          'callbacks': {
+          'signInSuccess': function(currentUser, credential, redirectUrl) {
+            console.log(redirectUrl);
+            // Do something.
+            // Return type determines whether we continue the redirect automatically
+            // or whether we leave that to developer to handle.
+            return true;
+          }
+        }
         };
 
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
-      },
-      signout: function() {
-        console.debug("call signout");
-        firebase.auth().signOut().then(function() {
-          // Sign-out successful.
-          console.debug("successfully logout");
-        }, function(error) {
-          // An error happened.
-          console.debug(error);
-        });
       }
     });
   </script>

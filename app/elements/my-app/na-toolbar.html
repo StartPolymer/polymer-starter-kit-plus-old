@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-icon-button icon="add-alert"></paper-icon-button>
     <paper-icon-button
         icon="[[computeLockIcon(signedIn)]]"
-        disabled="[[!signedIn]]"
+        disabled="[[signedIn]]"
         on-tap="lock">
     </paper-icon-button>
   </template>
@@ -41,10 +41,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       computeLockIcon: function(signedIn) {
+        console.log(signedIn);
         return signedIn ? 'lock-open' : 'lock';
       },
 
       lock: function() {
+        signedIn=false;
         this.fire('sign-out');
       }
     });

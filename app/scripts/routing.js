@@ -105,7 +105,7 @@ page(baseUrl, () => {
 });
 
 page('/login', () => {
-  // app.remove();
+  window.location.replace('login.html');
 });
 
 page('/users', () => {

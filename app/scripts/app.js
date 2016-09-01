@@ -165,7 +165,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   var initApp = function() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        console.log("ok");
+        console.log("Estou logado");
         // User is signed in.
         // var displayName = user.displayName;
         // var email = user.email;
@@ -186,13 +186,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         //     providerData: providerData
         //   }, null, '  ');
         // });
-        page('/home');
+        // page('/contact');
+
       } else {
+        console.log("fazer login");
         // User is signed out.
         // document.getElementById('sign-in-status').textContent = 'Signed out';
         // document.getElementById('sign-in').textContent = 'Sign in';
         // document.getElementById('account-details').textContent = 'null';
-          // page('/login');
+        page('/login');
       }
     }, function(error) {
       console.log(error);
@@ -201,6 +203,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   window.addEventListener('load', function() {
     initApp()
+  });
+
+  window.addEventListener('sign-out', () => {
+    logger('call signout')
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      logger('successfully logout');
+      page('/login')
+    }, function(error) {
+      // An error happened.
+      console.debug(error);
+    });
   });
 
 })(document);

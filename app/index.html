@@ -25,7 +25,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        similar to their final upgraded version. -->
   {% include "skeleton.html" %}
   <!-- Elements wait on the page and are upgraded when elements/base-bundle.html loads. -->
-  <na-login></na-login>
   <my-app id="app"></my-app>
 
   <!--  -->
@@ -57,7 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </firebase-app> -->
   <!-- build:js scripts/app.min.js async -->
   <script src="bower_components/page/page.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
   <script src="scripts/app.js"></script>
   <script src="scripts/routing.js"></script>
   <!-- endbuild-->
