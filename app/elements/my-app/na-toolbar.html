@@ -7,27 +7,37 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
 <dom-module id="na-toolbar">
   <template>
     <style>
-      :host {
-        --paper-icon-button-disabled: {
-          color: var(--paper-purple-50);
-        };
+      .profile-pic {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        box-sizing: border-box !important;
+        border-radius: 50%;
       }
+
     </style>
     <paper-icon-button icon="cloud" hidden$="[[!online]]"></paper-icon-button>
     <paper-icon-button icon="cloud-off" hidden$="[[online]]"></paper-icon-button>
-    <paper-icon-button icon="add-alert"></paper-icon-button>
-    <paper-icon-button
-        icon="[[computeLockIcon(signedIn)]]"
-        disabled="[[signedIn]]"
-        on-tap="lock">
-    </paper-icon-button>
+    <paper-menu-button horizontal-align="right">
+      <div class="dropdown-trigger">
+        <iron-icon src="{{profile.photoURL}}" class="profile-pic"></iron-icon>
+      </div>
+      <paper-menu class="dropdown-content">
+        <paper-item>
+          <paper-icon-button icon="account-circle"></paper-icon-button>[[profile.displayName]]</paper-item>
+        <paper-item>
+          <paper-icon-button icon="account-box"></paper-icon-button>Profile</paper-item>
+        <paper-item on-tap="lock">
+          <paper-icon-button icon="lock-open" on-tap="lock"></paper-icon-button>Logout</paper-item>
+      </paper-menu>
+    </paper-menu-button>
   </template>
   <script>
     Polymer({
@@ -35,18 +45,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       properties: {
         signedIn: {
           type: Boolean,
-          notify: true,
-          value: false
+          notify: true
+        },
+        profile: {
+          type: Object,
+          value: firebase.auth().currentUser,
+          notify: true
         }
       },
-
       computeLockIcon: function(signedIn) {
-        console.log(signedIn);
         return signedIn ? 'lock-open' : 'lock';
       },
 
       lock: function() {
-        signedIn=false;
         this.fire('sign-out');
       }
     });

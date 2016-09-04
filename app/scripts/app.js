@@ -166,6 +166,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log("Estou logado");
+        console.log(firebase.auth().currentUser);
+        // document.querySelector('na-toolbar').signedIn = true;
         // User is signed in.
         // var displayName = user.displayName;
         // var email = user.email;
@@ -186,7 +188,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         //     providerData: providerData
         //   }, null, '  ');
         // });
-        // page('/contact');
+        // page('/');
 
       } else {
         console.log("fazer login");
