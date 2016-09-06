@@ -4,7 +4,8 @@
 module.exports = function ($, gulp) { return function () {
   return gulp.src([
       'app/{scripts,elements}/**/*.js',
-      '!app/scripts/analytics.js'
+      '!app/scripts/analytics.js',
+      '!app/scripts/firebase-ui-auth.js',
     ])
     .pipe($.plumber())
     .pipe($.sourcemaps.init())

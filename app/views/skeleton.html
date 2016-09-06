@@ -12,23 +12,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      the main page. 1st paint is fast, even on polyfilled browsers. Alternatively,
      one could create an "app shell" and style the page's un-upgraded elements
      similar to their final upgraded version. -->
-<div id="skeleton" class="Skeleton">
-  <!-- drawer panel -->
-  <div class="Skeleton-drawer">
-    <!-- toolbar -->
-    <div class="Skeleton-drawerHeader">
-      <div class="Skeleton-drawerHeaderContent">
-        <div class="Skeleton-drawerTitle">{$ title $}</div>
-      </div>
-    </div>
 
-    <div class="Skeleton-drawerContent"></div>
-  </div>
-  <!-- main panel -->
-  <div class="Skeleton-main">
-    <!-- toolbar -->
-    <div class="Skeleton-mainHeader">
-      <div class="Skeleton-mainHeaderTopBar"></div>
-    </div>
+<h1 class="skeleton">{$ title $}</h1>
+<div class="login">
+  <div id="skeleton" class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
   </div>
 </div>

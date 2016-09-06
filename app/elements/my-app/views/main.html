@@ -14,11 +14,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Main Toolbar -->
   <paper-toolbar class="Main-header tall">
     <!-- Header icons -->
+    <!-- https://github.com/PolymerLabs/note-app/blob/master/common/note-app/na-toolbar.html -->
     <div class="Main-headerTopBar top">
       <paper-icon-button id="paperToggle" class="Main-headerButton" icon="menu" paper-drawer-toggle></paper-icon-button>
       <span class="u-spacer"></span>
-      <paper-icon-button class="Main-headerButton" icon="search"></paper-icon-button>
-      <paper-icon-button class="Main-headerButton" icon="bell-outline"></paper-icon-button>
+      <na-toolbar online="[[online]]"></na-toolbar>
     </div>
 
     <!-- Header title -->

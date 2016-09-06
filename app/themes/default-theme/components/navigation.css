@@ -36,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 /* https://github.com/jonathantneal/postcss-nesting/issues/16 */
 .Navigation--menu {
-  --paper-menu-color: currentColor;
+  --paper-menu-color: --dark-primary-color;
 
   /* stylelint-disable indentation */
 

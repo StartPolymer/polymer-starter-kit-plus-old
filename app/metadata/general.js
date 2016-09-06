@@ -1,7 +1,7 @@
 module.exports = {
-  appName: 'Polymer Starter Kit +',
+  appName: 'Starter Kit +',
   appShortName: 'PSK+',
-  title: 'Polymer Starter Kit Plus',
+  title: 'Starter Kit Plus',
   description: 'The future of the web today',
   charset: 'utf-8',
   lang: 'en',

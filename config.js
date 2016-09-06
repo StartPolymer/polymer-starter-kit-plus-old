@@ -36,15 +36,15 @@ module.exports = {
     browser: 'default', // or ["google chrome", "firefox"]
     https: false, // Enable https for localhost development.
     notify: false, // The small pop-over notifications in the browser.
-    port: process.env.PORT || 3000, // Environment variable $PORT is for Cloud9 IDE
+    port: process.env.PORT || 8080, // Environment variable $PORT is for Cloud9 IDE
     ui: {
-      port: 3001
+      port: 8081
     }
   },
   // Deploy task
   deploy: {
     // Choose hosting
-    hosting: 'gae', // or firebase, gcs, ssh
+    hosting: 'firebase', // or firebase, gcs, ssh
     // Firebase
     // Firebase requires Firebase Command Line Tools to be installed and configured.
     // For info on tool: https://www.firebase.com/docs/hosting/command-line-tool.html
@@ -111,7 +111,7 @@ module.exports = {
   pageSpeed: {
     key: '', // need uncomment in task
     nokey: true,
-    site: 'https://polymer-starter-kit-plus.firebaseapp.com',
+    site: 'https://project-7228392500579219360.firebaseio.com',
     strategy: 'mobile' // or desktop
   },
   // Service Worker

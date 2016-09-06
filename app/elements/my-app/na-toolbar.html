@@ -1,0 +1,65 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="na-toolbar">
+  <template>
+    <style>
+      .profile-pic {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        box-sizing: border-box !important;
+        border-radius: 50%;
+      }
+
+    </style>
+    <paper-icon-button icon="cloud" hidden$="[[!online]]"></paper-icon-button>
+    <paper-icon-button icon="cloud-off" hidden$="[[online]]"></paper-icon-button>
+    <paper-menu-button horizontal-align="right">
+      <div class="dropdown-trigger">
+        <iron-icon src="{{profile.photoURL}}" class="profile-pic"></iron-icon>
+      </div>
+      <paper-menu class="dropdown-content">
+        <paper-item>
+          <paper-icon-button icon="account-circle"></paper-icon-button>[[profile.displayName]]</paper-item>
+        <paper-item>
+          <paper-icon-button icon="account-box"></paper-icon-button>Profile</paper-item>
+        <paper-item on-tap="lock">
+          <paper-icon-button icon="lock-open" on-tap="lock"></paper-icon-button>Logout</paper-item>
+      </paper-menu>
+    </paper-menu-button>
+  </template>
+  <script>
+    Polymer({
+      is: 'na-toolbar',
+      properties: {
+        signedIn: {
+          type: Boolean,
+          notify: true
+        },
+        profile: {
+          type: Object,
+          value: firebase.auth().currentUser,
+          notify: true
+        }
+      },
+      computeLockIcon: function(signedIn) {
+        return signedIn ? 'lock-open' : 'lock';
+      },
+
+      lock: function() {
+        this.fire('sign-out');
+      }
+    });
+  </script>
+</dom-module>

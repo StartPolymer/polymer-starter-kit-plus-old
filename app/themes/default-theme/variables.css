@@ -76,14 +76,14 @@ for further information on custom CSS properties.
   --light-theme-toggle-checked-bar-color: var(--accent-color);
   --light-theme-toggle-checked-button-color: var(--accent-color);
   --light-theme-toggle-checked-ink-color: var(--dark-accent-color);
-  
+
   --dark-theme-toggle-unchecked-bar-color: var(--paper-grey-400);
   --dark-theme-toggle-unchecked-button-color: var(--paper-grey-400);
   --dark-theme-toggle-unchecked-ink-color: var(--paper-grey-50);
   --dark-theme-toggle-checked-bar-color: var(--light-accent-color);
   --dark-theme-toggle-checked-button-color: var(--light-accent-color);
   --dark-theme-toggle-checked-ink-color: var(--light-accent-color);
-  
+
   --toggle-unchecked-bar-color: var(--$(themeMode)-theme-toggle-unchecked-bar-color);
   --toggle-unchecked-button-color: var(--$(themeMode)-theme-toggle-unchecked-button-color);
   --toggle-unchecked-ink-color: var(--$(themeMode)-theme-toggle-unchecked-ink-color);

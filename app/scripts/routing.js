@@ -104,6 +104,11 @@ page(baseUrl, () => {
   setHomePage();
 });
 
+page('/login', () => {
+  // app.remove();
+  window.location.assign('../../login.html');
+});
+
 page('/users', () => {
   function setData() {
     app.route = 'users';
