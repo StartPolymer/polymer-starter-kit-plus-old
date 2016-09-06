@@ -318,7 +318,7 @@ gulp.task('views', require(task('views-nunjucks'))($, config, gulp, requireUncac
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
   runSequence(
-    ['copy', 'js', 'lint-js', 'lint', 'manifest', 'styles'],
+    ['copy', 'js', 'lint-js', 'lint', 'styles'],
     ['fonts', 'html', 'images'],
     'vulcanize',
     'clean-dist',
