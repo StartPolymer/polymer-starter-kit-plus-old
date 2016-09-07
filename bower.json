@@ -22,7 +22,8 @@
     "paper-toolbar": "PolymerElements/paper-toolbar#1.1.4",
     "platinum-sw": "PolymerElements/platinum-sw#1.2.3",
     "polymer": "Polymer/polymer#1.3.0",
-    "start-google-analytics-tracker": "StartPolymer/start-google-analytics-tracker#1.1.0"
+    "start-google-analytics-tracker": "StartPolymer/start-google-analytics-tracker#1.1.0",
+    "app-storage": "PolymerElements/app-storage#^0.9.4"
   },
   "devDependencies": {
     "web-component-tester": "4.2.0"

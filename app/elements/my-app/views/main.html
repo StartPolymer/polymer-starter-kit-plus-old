@@ -18,6 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-icon-button id="paperToggle" class="Main-headerButton" icon="menu" paper-drawer-toggle></paper-icon-button>
       <span class="u-spacer"></span>
       <paper-icon-button class="Main-headerButton" icon="search"></paper-icon-button>
+      <paper-icon-button icon="cloud" hidden$="[[!online]]"></paper-icon-button>
+      <paper-icon-button icon="cloud-off" hidden$="[[online]]"></paper-icon-button>
       <paper-icon-button class="Main-headerButton" icon="bell-outline"></paper-icon-button>
     </div>
 
